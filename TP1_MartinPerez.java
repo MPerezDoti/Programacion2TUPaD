@@ -14,20 +14,20 @@ public class TP1_MartinPerez {
         System.out.println("\n===== EJERCICIO 4 - Entrada de Usuario =====");
         ejercicio4_EntradaUsuario(sc);
 
-        System.out.println("\n===== EJERCICIO 5 - Condicionales =====");
-        ejercicio5_Condicionales(sc);
+        System.out.println("\n===== EJERCICIO 5 - Operaciones =====");
+        ejercicio5_Operaciones(sc);
 
-        System.out.println("\n===== EJERCICIO 6 - Bucles =====");
-        ejercicio6_Bucles();
+        System.out.println("\n===== EJERCICIO 6 - mostrarDatos =====");
+        ejercicio6_mostratDatos();
 
-        System.out.println("\n===== EJERCICIO 7 - Arreglos =====");
-        ejercicio7_Arreglos();
+        System.out.println("\n===== EJERCICIO 8 - Division =====");
+        ejercicio8_division();
 
-        System.out.println("\n===== EJERCICIO 8 - Funciones =====");
-        ejercicio8_Funciones();
+        System.out.println("\n===== EJERCICIO 9 - Codigo Corregido =====");
+        ErrorEjemplo();
 
-        System.out.println("\n===== EJERCICIO 9 - POO =====");
-        ejercicio9_POO();
+         System.out.println("\n===== EJERCICIO 10 - prueba escritorio =====");
+        PruebaEscritorio();
 
         sc.close();
     }
@@ -56,69 +56,63 @@ public class TP1_MartinPerez {
         String nombre = sc.nextLine();
         System.out.print("Ingrese su edad: ");
         int edad = sc.nextInt();
-        sc.nextLine(); // limpiar buffer
+        sc.nextLine(); 
 
         System.out.println("Hola " + nombre + ", tienes " + edad + " años.");
     }
 
-    // Ejercicio 5 - Condicionales
-    static void ejercicio5_Condicionales(Scanner sc) {
-        System.out.print("Ingrese un número: ");
-        int numero = sc.nextInt();
+    // Ejercicio 5 - operaciones
+    static void ejercicio5_Operaciones(Scanner sc) {
+        System.out.print("Ingrese el primer numero: ");
+        int numero1 = sc.nextInt();
 
-        if (numero > 0) {
-            System.out.println("El número es positivo.");
-        } else if (numero < 0) {
-            System.out.println("El número es negativo.");
-        } else {
-            System.out.println("El número es cero.");
+        System.out.print("Ingrese el segundo numero: ");
+        int numero2 = sc.nextInt();
+
+        int suma = numero1 + numero2;
+        int resta = numero1 - numero2;
+        int mult = numero1 * numero2;
+        int division = numero1 / numero2;
+
+        System.out.println("la suma es: " + suma + ", la resta es: " + resta + ", la multiplicacion es: " + mult + ", la division es: " + division + ".");
+    }
+
+    // Ejercicio 6 - mostrar datos
+    static void ejercicio6_mostratDatos() {
+        System.out.println("Nombre: Juan Pérez\nEdad: 30 años\nDirección: \"Calle Falsa 123\"");
+    }
+
+    // Ejercicio 8 - division
+    static void ejercicio8_division(Scanner sc) {
+        System.out.print("Ingrese el primer numero: ");
+        int numero1 = sc.nextInt();
+
+        System.out.print("Ingrese el segundo numero: ");
+        int numero2 = sc.nextInt();
+
+        dividiendo = numero1 / numero2;
+
+        System.out.println("El resultado de la Division es: " + dividiendo);
+    }
+
+       // Ejercicio 9 - Código corregido
+    static class ErrorEjemplo {
+        public static void main(String[] args) {
+            try (Scanner scanner = new Scanner(System.in)) {
+                System.out.print("Ingresa tu nombre: ");
+                String nombre = scanner.nextLine();
+                System.out.println("Hola, " + nombre);
+            }
         }
     }
 
-    // Ejercicio 6 - Bucles
-    static void ejercicio6_Bucles() {
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("Iteración " + i);
-        }
-    }
-
-    // Ejercicio 7 - Arreglos
-    static void ejercicio7_Arreglos() {
-        int[] numeros = {1, 2, 3, 4, 5};
-
-        System.out.println("Elementos del arreglo:");
-        for (int num : numeros) {
-            System.out.println(num);
-        }
-    }
-
-    // Ejercicio 8 - Funciones
-    static void ejercicio8_Funciones() {
-        int resultado = sumar(5, 7);
-        System.out.println("La suma de 5 + 7 es: " + resultado);
-    }
-
-    static int sumar(int a, int b) {
-        return a + b;
-    }
-
-    // Ejercicio 9 - POO
-    static void ejercicio9_POO() {
-        Persona persona = new Persona("Martín", 24);
-        persona.presentarse();
-    }
-
-    static class Persona {
-        String nombre;
-        int edad;
-
-        Persona(String nombre, int edad) {
-            this.nombre = nombre;
-            this.edad = edad;
-        }
-
-        void presentarse() {
-            System.out.println("Hola, soy " + nombre + " y tengo " + edad + " años.");
+    // Ejercicio 10 - Prueba de escritorio
+    static class PruebaEscritorio {
+        public static void main(String[] args) {
+            int a = 5;
+            int b = 2;
+            int resultado = a / b;
+            System.out.println("Resultado: " + resultado); // Resultado esperado: 2
         }
     }
 }
